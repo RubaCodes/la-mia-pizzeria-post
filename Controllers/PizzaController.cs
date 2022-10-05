@@ -39,6 +39,10 @@ namespace la_mia_pizzeria_static.Controllers
             /*
              * validazione
              */
+            if (!ModelState.IsValid)
+            {
+                return View("Create", data);
+            }
             using (PizzaContext db = new PizzaContext()) {
              
                 db.Pizzas.Add(data);
