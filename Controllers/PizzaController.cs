@@ -24,8 +24,28 @@ namespace la_mia_pizzeria_static.Controllers
             {
                 pizza = db.Pizzas.Where(x => x.PizzaId == id).FirstOrDefault();
             }
-                return View(pizza);
+            return View(pizza);
         }
 
+
+        [HttpGet]
+        public IActionResult Create() {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create( Pizza data) {
+
+            /*
+             * validazione
+             */
+            using (PizzaContext db = new PizzaContext()) {
+             
+                db.Pizzas.Add(data);
+                db.SaveChanges();
+                
+            }
+              return  RedirectToAction("Index");
+        }
     }
 }
