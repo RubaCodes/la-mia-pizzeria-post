@@ -1,3 +1,4 @@
+using la_mia_pizzeria_static.Validation;
 using System.ComponentModel.DataAnnotations;
 
 namespace la_mia_pizzeria_static.Models
@@ -9,6 +10,7 @@ namespace la_mia_pizzeria_static.Models
         [StringLength(50)]
         public string? Name { get; set; }
         [Required(ErrorMessage = "La descrizione della pizza e' obbligatoria")]
+        [FiveWordsValidation]
         public string? Description { get; set; }
         [Required(ErrorMessage = "L'immagine e' obbligatoria")]
         [Url]
