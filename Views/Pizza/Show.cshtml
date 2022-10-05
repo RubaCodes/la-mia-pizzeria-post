@@ -6,7 +6,7 @@
 <body>
     <section class="text-center bg-dark  text-white py-5" id="pizza-library">
         <div class="container">
-            <div class="text-white border-2 border rounded border-danger">
+            <div class=" display text-white border-2 border rounded border-danger">
                 <div class="row">
                     <div class="col-4">
                         <img class="img-fluid" src="@Model.ImgPath" alt="@Model.Name" />
@@ -20,6 +20,7 @@
                     </div>
                 </div>
             </div>
+            <a href="@Url.Action("Index", "Pizza")" class="btn btn-danger my-3">Home</a>
         </div>
     </section>
 </body>

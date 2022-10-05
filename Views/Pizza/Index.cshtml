@@ -12,7 +12,7 @@
                 {
                     @foreach (Pizza pizza in Model)
                     {
-                        <div class="col-3">
+                        <div class="col-4 py-2">
                             <a class="text-decoration-none  text-danger" href="@Url.Action("Show","Pizza", new{ Id = pizza.PizzaId})">
                                 <div class="card bg-dark bg-gradient text-white border-2  rounded-lg">
                                     @*@pizza.PizzaId  Id asseganto correttamente*@ 
